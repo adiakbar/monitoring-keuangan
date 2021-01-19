@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TV Jadwal Armada</title>
+
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fullpage.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<div id="fullpage">
+
+			<div class="section bg-blue-img bg-full" id="section3">
+				<div class="container">
+					<div class="header-logo">
+						<img src="logo-damri.png" alt="" style="width: 500px;">
+						<h3 style="font-size: 55px; margin-top: 20px; margin-bottom: 40px; font-weight: 600;">Data Keuangan</h3>
+					</div>
+					
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title">Kas Keuangan</h2>
+									<p class="card-text-span">{{section3[0].tanggal}}:</p>
+									<p class="card-text" style="color: #01489A">{{section3[0].kas}}</p>
+									<p class="card-text-span">{{section3[1].tanggal}}:</p>
+									<p class="card-text" style="color: #f48c06">{{section3[1].kas}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title">Pendapatan Harian</h2>
+									<p class="card-text-span">{{section3[0].tanggal}}:</p>
+									<p class="card-text" style="color: #01489A">{{section3[0].pendapatanharian}}</p>
+									<p class="card-text-span">{{section3[1].tanggal}}:</p>
+									<p class="card-text" style="color: #f48c06">{{section3[1].pendapatanharian}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title">Rekap Pendapatan</h2>
+									<p class="card-text-span">{{section3[0].tanggal}}:</p>
+									<p class="card-text" style="font-size: 35px; color: #01489A">{{section3[0].rekappendapatan}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title">Rekap Beban</h2>
+									<p class="card-text-span">{{section3[0].tanggal}}:</p>
+									<p class="card-text" style="font-size: 35px; color: #01489A">{{section3[0].rekapbeban}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="card">
+								<div class="card-body">
+									<h2 class="card-title">Laba Rugi</h2>
+									<p class="card-text-span">{{section3[0].tanggal}}:</p>
+									<p class="card-text" style="font-size: 35px; color: #01489A">{{section3[0].labarugi}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section bg-blue-img bg-full" id="section1">
+				<div class="container-fluid">
+					<div class="header-logo">
+						<img src="logo-damri.png" alt="" style="width: 500px;">
+						<h3 style="font-size: 55px; margin-top: 20px; margin-bottom: 40px; font-weight: 600;">Bidang Keuangan</h3>
+					</div>
+					
+					<table class="table table-striped text-table">
+						<tr>
+							<th>Fokus Pekerjaan</th>
+							<th>Uraian</th>
+							<th>Kodisi</th>
+							<th>Langkah Pekerjaan</th>
+							<th>Target</th>
+						</tr>
+						<tr v-for="data in section1">
+							<td>{{ data.fokus != 0 ? data.fokus : '' }}</td>
+							<td>{{ data.uraian != 0 ? data.uraian : '' }}</td>
+							<td>{{ data.kondisi != 0 ? data.kondisi : '' }}</td>
+							<td>{{ data.langkahpekerjaan != 0 ? data.langkahpekerjaan : '' }}</td>
+							<td>{{ data.target != 0 ? data.target : '' }}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+	
+			<div class="section bg-blue-img bg-full" id="section2a">
+				<div class="container-fluid">
+					<div class="header-logo">
+						<img src="logo-damri.png" alt="" style="width: 500px;">
+						<h3 style="font-size: 55px; margin-top: 20px; margin-bottom: 40px; font-weight: 600;">Bidang SDM dan UMUM</h3>
+					</div>
+					
+					<table class="table table-striped text-table">
+						<tr>
+							<th>Fokus Pekerjaan</th>
+							<th>Uraian</th>
+							<th>Kodisi</th>
+							<th>Langkah Pekerjaan</th>
+							<th>Target</th>
+						</tr>
+						<tr v-for="data in section2a">
+							<td>{{ data.fokus != 0 ? data.fokus : '' }}</td>
+							<td>{{ data.uraian != 0 ? data.uraian : '' }}</td>
+							<td>{{ data.kondisi != 0 ? data.kondisi : '' }}</td>
+							<td>{{ data.langkahpekerjaan != 0 ? data.langkahpekerjaan : '' }}</td>
+							<td>{{ data.target != 0 ? data.target : '' }}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="section bg-blue-img bg-full" id="section2b">
+				<div class="container-fluid">
+					<div class="header-logo">
+						<img src="logo-damri.png" alt="" style="width: 500px;">
+						<h3 style="font-size: 55px; margin-top: 20px; margin-bottom: 40px; font-weight: 600;">Bidang SDM dan UMUM</h3>
+					</div>
+					
+					<table class="table table-striped text-table">
+						<tr>
+							<th>Fokus Pekerjaan</th>
+							<th>Uraian</th>
+							<th>Kodisi</th>
+							<th>Langkah Pekerjaan</th>
+							<th>Target</th>
+						</tr>
+						<tr v-for="data in section2b">
+							<td>{{ data.fokus != 0 ? data.fokus : '' }}</td>
+							<td>{{ data.uraian != 0 ? data.uraian : '' }}</td>
+							<td>{{ data.kondisi != 0 ? data.kondisi : '' }}</td>
+							<td>{{ data.langkahpekerjaan != 0 ? data.langkahpekerjaan : '' }}</td>
+							<td>{{ data.target != 0 ? data.target : '' }}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="section bg-blue-img bg-full" id="section2c">
+				<div class="container-fluid">
+					<div class="header-logo">
+						<img src="logo-damri.png" alt="" style="width: 500px;">
+						<h3 style="font-size: 55px; margin-top: 20px; margin-bottom: 40px; font-weight: 600;">Bidang SDM dan UMUM</h3>
+					</div>
+					
+					<table class="table table-striped text-table">
+						<tr>
+							<th>Fokus Pekerjaan</th>
+							<th>Uraian</th>
+							<th>Kodisi</th>
+							<th>Langkah Pekerjaan</th>
+							<th>Target</th>
+						</tr>
+						<tr v-for="data in section2c">
+							<td>{{ data.fokus != 0 ? data.fokus : '' }}</td>
+							<td>{{ data.uraian != 0 ? data.uraian : '' }}</td>
+							<td>{{ data.kondisi != 0 ? data.kondisi : '' }}</td>
+							<td>{{ data.langkahpekerjaan != 0 ? data.langkahpekerjaan : '' }}</td>
+							<td>{{ data.target != 0 ? data.target : '' }}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+	
+			
+		</div>
+	</div>
+	
+
+	<script src="vue.min.js"></script>
+	<script src="axios.min.js"></script>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="fullpage.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
