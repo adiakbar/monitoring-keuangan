@@ -33,7 +33,7 @@ $(document).ready(function() {
     afterRender: function() {
       setInterval(function() {
         $.fn.fullpage.moveSectionDown();
-      },10000)
+      },50000)
     }
   });
 });
