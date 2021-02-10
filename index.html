@@ -17,7 +17,7 @@
 		<div id="fullpage">
 
 			<div class="section bg-blue-img bg-full" id="section3">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="header-logo">
 						<img src="logo-damri.png" alt="" style="width: 500px;">
 						<h3 style="font-size: 55px; margin-top: 20px; margin-bottom: 40px; font-weight: 600;">Data Keuangan</h3>
@@ -27,52 +27,97 @@
 						<div class="col-sm-6">
 							<div class="card">
 								<div class="card-body">
-									<h2 class="card-title">Kas Keuangan</h2>
-									<p class="card-text-span">{{section3[0].tanggal}}:</p>
-									<p class="card-text" style="color: #01489A">{{section3[0].kas}}</p>
-									<p class="card-text-span">{{section3[1].tanggal}}:</p>
-									<p class="card-text" style="color: #f48c06">{{section3[1].kas}}</p>
+									<h2 style="text-align: center; margin-bottom: 25px;">Laba / Rugi Harian</h2>
+									<table class="table">
+										<tr>
+											<th>Tanggal</th>
+											<th>Pendapatan</th>
+											<th>Beban</th>
+											<th>L / R</th>
+										</tr>
+										<tr v-for="data in section3">
+											<td style="font-size: 20px;">{{ data.tanggal }}</td>
+											<td style="font-size: 30px;">{{ data.pendapatan }}</td>
+											<td style="font-size: 30px;">{{ data.beban }}</td>
+											<td style="font-size: 30px; color: #e76f51; font-weight: bold;">{{ data.labarugi }}</td>
+										</tr>
+									</table>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="card">
 								<div class="card-body">
-									<h2 class="card-title">Pendapatan Harian</h2>
-									<p class="card-text-span">{{section3[0].tanggal}}:</p>
-									<p class="card-text" style="color: #01489A">{{section3[0].pendapatanharian}}</p>
-									<p class="card-text-span">{{section3[1].tanggal}}:</p>
-									<p class="card-text" style="color: #f48c06">{{section3[1].pendapatanharian}}</p>
+									<h2 style="text-align: center; margin-bottom: 25px;">Akumulasi Laba / Rugi</h2>
+									<table class="table">
+										<tr>
+											<th>Tanggal</th>
+											<th>Akumulasi Pendapatan</th>
+											<th>Akumulasi Beban</th>
+											<th>L / R</th>
+										</tr>
+										<tr v-for="data in section3">
+											<td style="font-size: 20px;">{{ data.tanggal }}</td>
+											<td style="font-size: 30px;">{{ data.akumulasipendapatan }}</td>
+											<td style="font-size: 30px;">{{ data.akumulasibeban }}</td>
+											<td style="font-size: 30px; color: #e76f51; font-weight: bold;">{{ data.akumulasilabarugi }}</td>
+										</tr>
+									</table>
 								</div>
 							</div>
 						</div>
 					</div>
-					<br>
+				</div>
+			</div>
+
+			<div class="section bg-blue-img bg-full" id="section4">
+				<div class="container-fluid">
+					<div class="header-logo">
+						<img src="logo-damri.png" alt="" style="width: 500px;">
+						<h3 style="font-size: 55px; margin-top: 20px; margin-bottom: 40px; font-weight: 600;">Data Keuangan</h3>
+					</div>
+					
 					<div class="row">
-						<div class="col-sm-4">
+						<div class="col-sm-9">
 							<div class="card">
 								<div class="card-body">
-									<h2 class="card-title">Rekap Pendapatan</h2>
-									<p class="card-text-span">{{section3[0].tanggal}}:</p>
-									<p class="card-text" style="font-size: 35px; color: #01489A">{{section3[0].rekappendapatan}}</p>
+									<h2 style="text-align: center; margin-bottom: 25px;">Bank Harian</h2>
+									<table class="table">
+										<tr>
+											<th>Tanggal</th>
+											<th>Bank BNI</th>
+											<th>Bank MANDIRI</th>
+											<th>Bank BTN</th>
+											<th>Bank BTN E-Tiket</th>
+											<th>Bank Kalbar</th>
+											<th>Jumlah</th>
+										</tr>
+										<tr v-for="data in section4">
+											<td style="font-size: 20px;">{{ data.tanggal }}</td>
+											<td style="font-size: 20px;">{{ data.bankbni }}</td>
+											<td style="font-size: 20px;">{{ data.bankmandiri }}</td>
+											<td style="font-size: 20px;">{{ data.bankbtn }}</td>
+											<td style="font-size: 20px;">{{ data.bankbtntiket }}</td>
+											<td style="font-size: 20px;">{{ data.bankkalbar }}</td>
+											<td style="font-size: 30px; color: #e76f51; font-weight: bold;">{{ data.total }}</td>
+										</tr>
+									</table>
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
+						
+						<div class="col-sm-3">
 							<div class="card">
 								<div class="card-body">
-									<h2 class="card-title">Rekap Beban</h2>
-									<p class="card-text-span">{{section3[0].tanggal}}:</p>
-									<p class="card-text" style="font-size: 35px; color: #01489A">{{section3[0].rekapbeban}}</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="card">
-								<div class="card-body">
-									<h2 class="card-title">Laba Rugi</h2>
-									<p class="card-text-span">{{section3[0].tanggal}}:</p>
-									<p class="card-text" style="font-size: 35px; color: #01489A">{{section3[0].labarugi}}</p>
+									<h2 style="text-align: center; margin-bottom: 25px;">Setoran Pemasaran</h2>
+									<table class="table">
+										<tr>
+											<th>Setoran</th>
+										</tr>
+										<tr v-for="data in section4">
+											<td style="font-size: 30px; color: #e76f51; font-weight: bold;">{{ data.kassetoranpontianak }}</td>
+										</tr>
+									</table>
 								</div>
 							</div>
 						</div>
@@ -96,6 +141,32 @@
 							<th>Target</th>
 						</tr>
 						<tr v-for="data in section1">
+							<td>{{ data.fokus != 0 ? data.fokus : '' }}</td>
+							<td>{{ data.uraian != 0 ? data.uraian : '' }}</td>
+							<td>{{ data.kondisi != 0 ? data.kondisi : '' }}</td>
+							<td>{{ data.langkahpekerjaan != 0 ? data.langkahpekerjaan : '' }}</td>
+							<td>{{ data.target != 0 ? data.target : '' }}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="section bg-blue-img bg-full" id="section1a">
+				<div class="container-fluid">
+					<div class="header-logo">
+						<img src="logo-damri.png" alt="" style="width: 500px;">
+						<h3 style="font-size: 55px; margin-top: 20px; margin-bottom: 40px; font-weight: 600;">Bidang Keuangan</h3>
+					</div>
+					
+					<table class="table table-striped text-table">
+						<tr>
+							<th>Fokus Pekerjaan</th>
+							<th>Uraian</th>
+							<th>Kodisi</th>
+							<th>Langkah Pekerjaan</th>
+							<th>Target</th>
+						</tr>
+						<tr v-for="data in section1a">
 							<td>{{ data.fokus != 0 ? data.fokus : '' }}</td>
 							<td>{{ data.uraian != 0 ? data.uraian : '' }}</td>
 							<td>{{ data.kondisi != 0 ? data.kondisi : '' }}</td>
