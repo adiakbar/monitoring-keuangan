@@ -15,8 +15,8 @@ let app = new Vue({
       setInterval(function() {
         axios.get('https://stormy-brushlands-62293.herokuapp.com/api?id=1cmayAQ-yL84zAZMI2c1R-MiEvLK_8CjKrP05qg620Jo&sheet=1')
           .then(response => {
-            self.section1 = response.data.rows.slice(0,4)
-            self.section1a = response.data.rows.slice(4,10)
+            self.section1 = response.data.rows.slice(0,5)
+            self.section1a = response.data.rows.slice(5,15)
           })
         axios.get('https://stormy-brushlands-62293.herokuapp.com/api?id=1cmayAQ-yL84zAZMI2c1R-MiEvLK_8CjKrP05qg620Jo&sheet=2')
           .then(response => {
@@ -42,9 +42,9 @@ let app = new Vue({
       })
     axios.get('https://stormy-brushlands-62293.herokuapp.com/api?id=1cmayAQ-yL84zAZMI2c1R-MiEvLK_8CjKrP05qg620Jo&sheet=2')
       .then(response => {
-        this.section2a = response.data.rows.slice(0, 6)
-        this.section2b = response.data.rows.slice(6, 13)
-        this.section2c = response.data.rows.slice(13, 20)
+        this.section2a = response.data.rows.slice(0, 5)
+        this.section2b = response.data.rows.slice(5, 10)
+        this.section2c = response.data.rows.slice(10, 15)
       })
     axios.get('https://stormy-brushlands-62293.herokuapp.com/api?id=1cmayAQ-yL84zAZMI2c1R-MiEvLK_8CjKrP05qg620Jo&sheet=5')
       .then(response => {
